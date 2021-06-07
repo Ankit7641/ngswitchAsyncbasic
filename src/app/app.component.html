@@ -1,0 +1,27 @@
+<div>
+  {{title}}
+  
+<table>
+  <ul *ngFor="let data of employee" [ngSwitch]="data.currency">
+    <tr *ngSwitchCase="'India'">
+     ID: <td> <u>{{data.id}}</u> </td>
+     NAME: <td> <u>{{data.name}}</u> </td>
+     CURRENCY: <td><u> {{data.currency}}</u> </td> 
+     STATUS: <td><u> {{data.status}}</u> </td>
+     DATE: <td> <u>{{data.date}} </u></td>
+    </tr>
+    <!-- <li *ngSwitchCase="'Euro'">{{data.currency}}</li> -->
+
+    <!-- <li *ngSwitchDefault>{{data.currency}}</li> -->
+</ul>
+</table>
+
+</div>
+
+<div>
+  <code>promise|async</code>:
+  <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+  <span>Wait for it... {{ greeting | async }}</span>
+</div>
+
+<div><code>observable|async</code>: Time: {{ time | async }}</div>
